@@ -18,8 +18,8 @@ import { FunctionFragment, Result, EventFragment } from "@ethersproject/abi";
 import { Listener, Provider } from "@ethersproject/providers";
 import { TypedEventFilter, TypedEvent, TypedListener, OnEvent } from "./common";
 
-export interface MyTokenUpgradableInterface extends utils.Interface {
-  contractName: "MyTokenUpgradable";
+export interface MyTokenUpgradableV2Interface extends utils.Interface {
+  contractName: "MyTokenUpgradableV2";
   functions: {
     "DEFAULT_ADMIN_ROLE()": FunctionFragment;
     "MINTER_ROLE()": FunctionFragment;
@@ -38,6 +38,7 @@ export interface MyTokenUpgradableInterface extends utils.Interface {
     "initialize()": FunctionFragment;
     "mint(address,uint256)": FunctionFragment;
     "name()": FunctionFragment;
+    "newFunction()": FunctionFragment;
     "proxiableUUID()": FunctionFragment;
     "renounceRole(bytes32,address)": FunctionFragment;
     "revokeRole(bytes32,address)": FunctionFragment;
@@ -106,6 +107,10 @@ export interface MyTokenUpgradableInterface extends utils.Interface {
     values: [string, BigNumberish]
   ): string;
   encodeFunctionData(functionFragment: "name", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: "newFunction",
+    values?: undefined
+  ): string;
   encodeFunctionData(
     functionFragment: "proxiableUUID",
     values?: undefined
@@ -176,6 +181,10 @@ export interface MyTokenUpgradableInterface extends utils.Interface {
   decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "mint", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "name", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "newFunction",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "proxiableUUID",
     data: BytesLike
@@ -277,13 +286,13 @@ export type UpgradedEvent = TypedEvent<[string], { implementation: string }>;
 
 export type UpgradedEventFilter = TypedEventFilter<UpgradedEvent>;
 
-export interface MyTokenUpgradable extends BaseContract {
-  contractName: "MyTokenUpgradable";
+export interface MyTokenUpgradableV2 extends BaseContract {
+  contractName: "MyTokenUpgradableV2";
   connect(signerOrProvider: Signer | Provider | string): this;
   attach(addressOrName: string): this;
   deployed(): Promise<this>;
 
-  interface: MyTokenUpgradableInterface;
+  interface: MyTokenUpgradableV2Interface;
 
   queryFilter<TEvent extends TypedEvent>(
     event: TypedEventFilter<TEvent>,
@@ -375,6 +384,8 @@ export interface MyTokenUpgradable extends BaseContract {
     ): Promise<ContractTransaction>;
 
     name(overrides?: CallOverrides): Promise<[string]>;
+
+    newFunction(overrides?: CallOverrides): Promise<[boolean]>;
 
     proxiableUUID(overrides?: CallOverrides): Promise<[string]>;
 
@@ -495,6 +506,8 @@ export interface MyTokenUpgradable extends BaseContract {
 
   name(overrides?: CallOverrides): Promise<string>;
 
+  newFunction(overrides?: CallOverrides): Promise<boolean>;
+
   proxiableUUID(overrides?: CallOverrides): Promise<string>;
 
   renounceRole(
@@ -608,6 +621,8 @@ export interface MyTokenUpgradable extends BaseContract {
     ): Promise<void>;
 
     name(overrides?: CallOverrides): Promise<string>;
+
+    newFunction(overrides?: CallOverrides): Promise<boolean>;
 
     proxiableUUID(overrides?: CallOverrides): Promise<string>;
 
@@ -806,6 +821,8 @@ export interface MyTokenUpgradable extends BaseContract {
 
     name(overrides?: CallOverrides): Promise<BigNumber>;
 
+    newFunction(overrides?: CallOverrides): Promise<BigNumber>;
+
     proxiableUUID(overrides?: CallOverrides): Promise<BigNumber>;
 
     renounceRole(
@@ -933,6 +950,8 @@ export interface MyTokenUpgradable extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     name(overrides?: CallOverrides): Promise<PopulatedTransaction>;
+
+    newFunction(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     proxiableUUID(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
