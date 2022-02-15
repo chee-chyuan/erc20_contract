@@ -3,7 +3,6 @@
 /* eslint-disable */
 export type { AccessControlUpgradeable } from "./AccessControlUpgradeable";
 export type { IAccessControlUpgradeable } from "./IAccessControlUpgradeable";
-export type { OwnableUpgradeable } from "./OwnableUpgradeable";
 export type { IERC1822ProxiableUpgradeable } from "./IERC1822ProxiableUpgradeable";
 export type { IBeaconUpgradeable } from "./IBeaconUpgradeable";
 export type { ERC1967UpgradeUpgradeable } from "./ERC1967UpgradeUpgradeable";
@@ -14,11 +13,6 @@ export type { IERC20MetadataUpgradeable } from "./IERC20MetadataUpgradeable";
 export type { IERC20Upgradeable } from "./IERC20Upgradeable";
 export type { ERC165Upgradeable } from "./ERC165Upgradeable";
 export type { IERC165Upgradeable } from "./IERC165Upgradeable";
-export type { IERC1822Proxiable } from "./IERC1822Proxiable";
-export type { IBeacon } from "./IBeacon";
-export type { ERC1967Proxy } from "./ERC1967Proxy";
-export type { ERC1967Upgrade } from "./ERC1967Upgrade";
-export type { Proxy } from "./Proxy";
 export type { ERC20 } from "./ERC20";
 export type { IERC20Metadata } from "./IERC20Metadata";
 export type { IERC20 } from "./IERC20";
@@ -28,7 +22,6 @@ export type { MyTokenUpgradableV2 } from "./MyTokenUpgradableV2";
 
 export { AccessControlUpgradeable__factory } from "./factories/AccessControlUpgradeable__factory";
 export { IAccessControlUpgradeable__factory } from "./factories/IAccessControlUpgradeable__factory";
-export { OwnableUpgradeable__factory } from "./factories/OwnableUpgradeable__factory";
 export { IERC1822ProxiableUpgradeable__factory } from "./factories/IERC1822ProxiableUpgradeable__factory";
 export { IBeaconUpgradeable__factory } from "./factories/IBeaconUpgradeable__factory";
 export { ERC1967UpgradeUpgradeable__factory } from "./factories/ERC1967UpgradeUpgradeable__factory";
@@ -39,11 +32,6 @@ export { IERC20MetadataUpgradeable__factory } from "./factories/IERC20MetadataUp
 export { IERC20Upgradeable__factory } from "./factories/IERC20Upgradeable__factory";
 export { ERC165Upgradeable__factory } from "./factories/ERC165Upgradeable__factory";
 export { IERC165Upgradeable__factory } from "./factories/IERC165Upgradeable__factory";
-export { IERC1822Proxiable__factory } from "./factories/IERC1822Proxiable__factory";
-export { IBeacon__factory } from "./factories/IBeacon__factory";
-export { ERC1967Proxy__factory } from "./factories/ERC1967Proxy__factory";
-export { ERC1967Upgrade__factory } from "./factories/ERC1967Upgrade__factory";
-export { Proxy__factory } from "./factories/Proxy__factory";
 export { ERC20__factory } from "./factories/ERC20__factory";
 export { IERC20Metadata__factory } from "./factories/IERC20Metadata__factory";
 export { IERC20__factory } from "./factories/IERC20__factory";
