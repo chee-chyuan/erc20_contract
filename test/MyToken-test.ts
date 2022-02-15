@@ -66,7 +66,7 @@ describe("MyToken Test", () => {
   });
 
   it("should be able to approve a spender and transferFrom by spender", async () => {
-    // for simplicity, we set the approvae amount to be equal to the current balance of the recipient
+    // for simplicity, we set the approve amount to be equal to the current balance of the recipient
     approveAmount = BigNumber.from(10).mul(exponent);
     const approveTx = await contract
       .connect(recipient)
