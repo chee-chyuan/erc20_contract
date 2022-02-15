@@ -5,6 +5,7 @@ import "hardhat-spdx-license-identifier";
 import '@typechain/hardhat';
 import '@nomiclabs/hardhat-ethers';
 import "@nomiclabs/hardhat-etherscan";
+import "@openzeppelin/hardhat-upgrades"
 import "dotenv/config"
 
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
