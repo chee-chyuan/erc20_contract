@@ -1,6 +1,6 @@
 # Basic Sample Hardhat Project
 
-![example workflow](https://github.com/chee-chyuan/erc20_contract/actions/workflows/test.yml/badge.svg)
+![test](https://github.com/chee-chyuan/erc20_contract/actions/workflows/test.yml/badge.svg) ![slither](https://github.com/chee-chyuan/erc20_contract/actions/workflows/slither.yml/badge.svg)
 
 
 This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
