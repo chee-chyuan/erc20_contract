@@ -25,10 +25,10 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  const config: HardhatUserConfig = {
   solidity: "0.8.11",
   networks: {
-    rinkeby: {
-      url: process.env.DEPLOYMENT_URL,
-      accounts: [`0x${process.env.PRIVATE_KEY}`],
-    },
+    // rinkeby: {
+    //   url: process.env.DEPLOYMENT_URL,
+    //   accounts: [`0x${process.env.PRIVATE_KEY}`],
+    // },
   },
   spdxLicenseIdentifier: {
     overwrite: true,
